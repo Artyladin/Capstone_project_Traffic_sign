@@ -7,7 +7,7 @@ import joblib
 from utils import preprocessor
 from keras.preprocessing import image
 
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 
 app = Flask(__name__)
 
