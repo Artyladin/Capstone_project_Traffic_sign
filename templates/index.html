@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--Based on https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>API for German Traffic Sign recognition</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+  <h1>Predict German Traffic Sign (Simple_Model)</h1>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" placeholder="Load image" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    {% if filename %}
+        <div>
+            <img src="{{ filename }}">
+        </div>
+    {% endif %}
+
+   <br>
+   <br>
+   {{ prediction }}
+
+</div>
+</body>
+</html>
